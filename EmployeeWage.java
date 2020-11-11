@@ -1,5 +1,5 @@
 import java.util.Random;
-class EmployeeWage{
+class Employee{
   static final int full_wage=160;
   static final int no_wage=0;
   static final int part_time=80;
@@ -25,10 +25,11 @@ class EmployeeWage{
       }
     }
   }
-  
+}
+class EmployeeWage{
   public static void main(String[] args) {
     System.out.println("Welcome to Employee Wage Computation Program on Master Branch");
-    EmployeeWage obj = new EmployeeWage();
+    Employee obj = new Employee();
     obj.calculate_wage();
   }
 }
