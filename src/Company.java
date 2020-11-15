@@ -1,6 +1,5 @@
-import java.util.Scanner;
 
-public class Company {
+public class  Company {
 	public final int fullTime;
 	public final int partTime;
 	public final int workDays;

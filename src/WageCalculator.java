@@ -1,24 +1,33 @@
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
 import java.util.Random;
 
-public class WageCalculator {
-	private int numOfCompany = 0;
-	private Company[] companyArray;
+public class WageCalculator implements ICompany {
+//	private int numOfCompany = 0;
+	//private Company[] companyArray;
+	private LinkedList<Company> companyLinkedList;
+	private Map<String,Company> companyWageMap;
 	
 	public WageCalculator() {
-		companyArray =  new Company[5];
+		companyLinkedList =  new LinkedList<Company>();
+		companyWageMap = new HashMap<String,Company>();
 	}
 	
 	public void addCompany(int fullTime, int partTime,int workDays, String companyName) {
-		companyArray[numOfCompany] = new Company(fullTime, partTime,workDays, companyName);
-		numOfCompany++;
+		Company companyObj  = new Company(fullTime, partTime,workDays, companyName);
+		companyLinkedList.add(companyObj);
+		companyWageMap.put(companyName,companyObj);
 	}
 	
 	public void calculateWage() {
-		for(int i=0; i < numOfCompany; i++ ) {
-			companyArray[i].setTotalWage(this.calculateWage(companyArray[i]));
-			System.out.println(companyArray[i]);
+		for(int i=0; i<companyLinkedList.size(); i++) {
+			Company companyObj = companyLinkedList.get(i);
+			companyObj.setTotalWage(this.calculateWage(companyObj));
 		}
 	}
+	
+
 	public int calculateWage(Company Company){
 		    int attendance,sum=0;
 		    Random rand = new Random();
@@ -40,6 +49,8 @@ public class WageCalculator {
 		    }
 		    return sum;
 	 }
+
+
 }
 	 
 
