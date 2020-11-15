@@ -1,11 +1,11 @@
-import java.util.Scanner;
 
 public class EmployeeWage {
 
 	public static void main(String[] args) {
-		System.out.println("Collecting details......");
-		Company obj = new Company();
-		obj.detailsCollector();
+		WageCalculator calcObj = new WageCalculator();
+		calcObj.addCompany(160, 80 , 20 , "Dmart");
+		calcObj.addCompany(200, 100 , 26 , "VijaySales");
+		calcObj.calculateWage();
 	}
 
 }
