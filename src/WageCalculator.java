@@ -50,6 +50,12 @@ public class WageCalculator implements ICompany {
 		    return sum;
 	 }
 
+	@Override
+	public int getTotalWage(String companyName) {
+		return companyWageMap.get(companyName).totalWage;
+		
+	}
+
 
 }
 	 

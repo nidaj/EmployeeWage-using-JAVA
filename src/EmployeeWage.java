@@ -10,6 +10,7 @@ public class EmployeeWage {
 //		calcObj.addCompany(200, 100 , 26 , "VijaySales");
 //		calcObj.calculateWage();
 		wageCalculatorObj.calculateWage();
+		System.out.println("Total Wage For VijaySales: "+wageCalculatorObj.getTotalWage("VijaySales"));
 	}
 
 }
